@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100vh;
+   background-color: hsl(206, 94%, 87%);
+}
+.section {
+   border: 1px solid white;
+   padding: 16px;
+   border-radius: 15px;
+   box-shadow: 0px 5px 5px 3px hsl(228, 100%, 84%);
+   background-color: white;
+}
+.active {
+   background-color: hsl(206, 94%, 87%);
+   border: 1px solid hsl(206, 94%, 87%);
+   color: black;
+   font-weight: bolder;
+}
+
+@media screen and (min-width: 1024px) {
+   .section {
+      width: 900px;
+   }
+}

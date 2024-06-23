@@ -5,7 +5,14 @@ export default {
       "./src/**/*.{js,ts,jsx,tsx}",
     ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+         'nav': "url('/images/components/util/bg-sidebar-desktop.svg')"
+      },
+      fontFamily: {
+         'body' : "Ubuntu"
+      }
+    },
   },
   plugins: [],
 }
