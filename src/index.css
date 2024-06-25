@@ -20,12 +20,12 @@
    background-color: white;
    display: flex;
    gap: 10px;
-   width: min(93%, 900px);
+   width: min(93%, 1000px);
 }
 .active {
    background-color: hsl(206, 94%, 87%);
    border: 1px solid hsl(206, 94%, 87%);
-   color: black;
+   color: rgb(2, 41, 90);
    font-weight: bolder;
 }
 
