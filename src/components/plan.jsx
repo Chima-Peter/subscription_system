@@ -84,7 +84,7 @@ function Plan() {
                            onChange={handleChange}
                            type="radio" 
                            name="plan"
-                           placeholder='Arcade (Monthly) $9/mo' 
+                           placeholder='Arcade (Monthly) $9/mo mo'  
                            id="arcade" 
                            checked={checkBox.val1}
                            value={'val1'}
@@ -101,7 +101,7 @@ function Plan() {
                            id='adv' 
                            checked={checkBox.val2}
                            value={'val2'}
-                           placeholder='Advanced (Monthly) $12/mo' 
+                           placeholder='Advanced (Monthly) $12/mo mo' 
                            className='peer/adv hidden' />
                            <label 
                            htmlFor="adv" 
@@ -112,7 +112,7 @@ function Plan() {
                            onChange={handleChange}
                            type="radio" 
                            name="plan"
-                           placeholder='Pro (Monthly) $15/mo'  
+                           placeholder='Pro (Monthly) $15/mo mo'  
                            id="pro" 
                            checked={checkBox.val3}
                            value={'val3'}
@@ -133,7 +133,7 @@ function Plan() {
                            checked={checkBox.val4}
                            value={'val4'}
                            id="arcade"
-                           placeholder='Arcade (Yearly) $90/yr'  
+                           placeholder='Arcade (Yearly) $90/yr yr'  
                            className='hidden peer/arcade'/>
                         <label 
                         htmlFor="arcade" 
@@ -147,7 +147,7 @@ function Plan() {
                            id='adv' 
                            checked={checkBox.val5}
                            value={'val5'}
-                           placeholder='Advanced (Yearly) $120/yr' 
+                           placeholder='Advanced (Yearly) $120/yr yr' 
                            className='peer/adv hidden' />
                            <label 
                            htmlFor="adv" 
@@ -161,7 +161,7 @@ function Plan() {
                            checked={checkBox.val6}
                            value={'val6'}
                            id="pro" 
-                           placeholder='Pro (Yearly) $150/yr' 
+                           placeholder='Pro (Yearly) $150/yr yr' 
                            className='peer/pro hidden'/>
                         <label 
                            htmlFor="pro" 

@@ -1,6 +1,6 @@
 function AddOnBlock({ header, paragraph, pricing}) {
   return (
-   <div className="flex gap-4 items-center">
+   <div className="flex w-[300px] justify-between items-center">
       <div className="flex flex-col">
          <h4 className='text-[14px] font-extrabold'>
             {header}
@@ -9,7 +9,7 @@ function AddOnBlock({ header, paragraph, pricing}) {
             {paragraph}
          </p>
       </div>
-      <p  className='ml-16 font-medium text-[hsl(243,100%,62%)] text-xs'>
+      <p  className='font-medium text-[hsl(243,100%,62%)] text-xs'>
          {pricing}
       </p>
    </div>
