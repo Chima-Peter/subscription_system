@@ -3,10 +3,11 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import validator from 'validator'
 import '../index.css'
-import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function Info() {
    const nameRegex = /^[a-zA-Z ]+$/;
+   const navigate = useNavigate()
    const formik = useFormik({
       initialValues: {
          name: '',
@@ -31,7 +32,7 @@ function Info() {
                })  
       }),
       onSubmit: values => {
-         alert(JSON.stringify(values, null, 2));
+         navigate('/plan')
       }
    })
   return (
