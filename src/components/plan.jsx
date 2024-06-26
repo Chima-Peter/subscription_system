@@ -1,14 +1,16 @@
 import { createContext, useEffect, useState } from 'react'
-import Block from './utils/block'
+import { Block } from './utils/block'
 import { Next, Prev } from './utils/buttons'
 import Desktop from './utils/desktop_bar'
 import Toggle from './utils/toggle'
+import { useNavigate } from 'react-router-dom'
 
 const toggleBar = createContext()
 function Plan() {
    const [showToggle, setShowToggle] = useState(true)
    const [checker, setChecker] = useState(false)
    const [plan, setPlan] = useState('')
+   const navigate = useNavigate()
    const [checkBox, setCheckBox] = useState(
       {
          val1: false,
@@ -24,13 +26,17 @@ function Plan() {
       const newData = checkBox
       Object.keys(newData).forEach((key) => {
          if (sessionStorage.getItem('plan'))
-            newData[key] = (JSON.parse(sessionStorage.getItem('plan')))[key]
+            {
+               newData[key] = (JSON.parse(sessionStorage.getItem('plan')))[key]
+               setChecker(true)
+            }
       })
       setCheckBox(newData)
-      if (checkBox.val4 || checkBox.val5 || checkBox.val6)
-         setShowToggle(false)
-      else if (checkBox.val1 || checkBox.val3 || checkBox.val3)
-         setShowToggle(true)
+            if (checkBox.val4 || checkBox.val5 || checkBox.val6)
+               setShowToggle(false)
+            else if (checkBox.val1 || checkBox.val3 || checkBox.val3)
+               setShowToggle(true)
+
    }, [])
 
    const handleChange = () => {
@@ -49,11 +55,11 @@ function Plan() {
    const handlePlan = () => {
       event.preventDefault()
       if (!checker)
-         console.log('fail')
+         return
       else {
          sessionStorage.setItem('plan', JSON.stringify(checkBox))
          sessionStorage.setItem('planText', JSON.stringify(plan))
-         console.log('success')
+         navigate('/add-on')
       }
    }
    
