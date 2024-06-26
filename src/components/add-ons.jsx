@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Next, Prev } from './utils/buttons'
 import Desktop from './utils/desktop_bar'
+import AddOnBlock from './utils/addonblock'
 
 function AddOn() {
    const [checker, setChecker] = useState(true)
@@ -58,6 +59,19 @@ function AddOn() {
             </div>
             <div className='mt-10 flex flex-col'>
                <form noValidate autoComplete='on' onSubmit={handleAddOn}>
+                  <div 
+                     className='cursor-pointer flex gap-4 items-center rounded-lg text-[hsl(213,96%,18%)] font-body w-full p-4 border border-[hsl(229,24%,87%)] hover:border-[hsl(243,100%,62%)]'>
+                     <input
+                        type="checkbox" 
+                        name="online" 
+                        id="online" 
+                     />
+                     <label 
+                        htmlFor='online'
+                        >
+                           <AddOnBlock header={'Online service'} paragraph={'Access to multiplayer games'} pricing={'+$1/mo'} />
+                        </label>
+                  </div>
                   <div className='mt-[3.6rem] flex justify-between'>
                      <Prev back={'/plan'}/>
                      <Next />
