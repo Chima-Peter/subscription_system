@@ -22,4 +22,5 @@ function Block({imgText, text, pricing, month}) {
   )
 }
 
+
 export { Block }
