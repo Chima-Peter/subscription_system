@@ -1,4 +1,3 @@
-import React from "react"
 import Desktop from "./utils/desktop_bar"
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -6,6 +5,7 @@ import validator from 'validator'
 import '../index.css'
 import { useNavigate } from "react-router-dom"
 import { Next } from "./utils/buttons"
+
 
 function Info({lastName='', lastEmail='', lastPhone=''}) {
    const nameRegex = /^[a-zA-Z ]+$/;
