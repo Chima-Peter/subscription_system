@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Next() {
   return (
@@ -9,4 +10,15 @@ function Next() {
   )
 }
 
-export { Next }
+function Prev({back}) {
+   const navigate = useNavigate()
+
+   return (
+      <Link 
+         to={back}
+         className='text-sm font-medium w-fit text-[rgb(2,41,90)] mt-20' >
+         Go Back
+      </Link>
+      )
+   }
+   export { Next, Prev }

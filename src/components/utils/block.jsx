@@ -1,6 +1,3 @@
-import React, { useContext } from 'react'
-import { toggleBar } from '../plan'
-
 function Block({imgText, text, pricing, month}) {
    
   return (
@@ -12,7 +9,7 @@ function Block({imgText, text, pricing, month}) {
          <h4 className='py-1 text-[14px] font-extrabold'>
             {text}
          </h4>
-         <p className='font-light text-xs'>
+         <p className='font-normal text-xs'>
             {pricing}
          </p>
          {

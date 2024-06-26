@@ -18,10 +18,10 @@ function Toggle() {
          Monthly
       </p>
       {
-         toggle && <Icon path={mdiToggleSwitchOff} size={1.2} onClick={changeToggle} className='cursor-pointer' />
+         !toggle && <Icon path={mdiToggleSwitchOff} size={1.5} onClick={changeToggle} className='cursor-pointer' />
       }
       {
-         !toggle && <Icon path={mdiToggleSwitch} size={1.2} onClick={changeToggle} className='cursor-pointer' />
+         toggle && <Icon path={mdiToggleSwitch} size={1.5} onClick={changeToggle} className='cursor-pointer' />
       }
       <p className={`${toggle ? 'text-[hsl(231,11%,63%)]' : 'text-[hsl(213,96%,18%)]'}`}>
          Yearly
