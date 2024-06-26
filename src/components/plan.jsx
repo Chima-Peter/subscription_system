@@ -71,7 +71,7 @@ function Plan() {
                </p>
             </div>
             <div className='mt-10 flex flex-col'>
-               <form autoComplete='on' onSubmit={handlePlan} noValidate>
+               <form onSubmit={handlePlan} noValidate>
                   {
                      showToggle && <div className='flex gap-3'>
                         <input
