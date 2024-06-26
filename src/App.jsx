@@ -3,6 +3,7 @@ import ErrorPage from "./components/errorpage"
 import Info from "./components/info"
 import {Plan} from "./components/plan"
 import AddOn from "./components/add-ons"
+import Summary from "./components/summary"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
          <Route path="/" element={<Info />} />
          <Route path="plan" element={<Plan />} />
          <Route path="add-on" element={<AddOn />} />
+         <Route path="summary" element={<Summary />} />
       </Routes>
    </BrowserRouter>
   )
