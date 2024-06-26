@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { Next } from "./utils/buttons"
 
 
-function Info({lastName='', lastEmail='', lastPhone=''}) {
+function Info() {
    const nameRegex = /^[a-zA-Z ]+$/;
    const navigate = useNavigate()
    const formik = useFormik({
