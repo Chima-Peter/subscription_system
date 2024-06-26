@@ -1,18 +1,20 @@
+import React from "react"
 import Desktop from "./utils/desktop_bar"
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import validator from 'validator'
 import '../index.css'
 import { useNavigate } from "react-router-dom"
+import { Next } from "./utils/buttons"
 
-function Info() {
+function Info({lastName='', lastEmail='', lastPhone=''}) {
    const nameRegex = /^[a-zA-Z ]+$/;
    const navigate = useNavigate()
    const formik = useFormik({
       initialValues: {
-         name: '',
-         email: '',
-         phone: ''
+         name: JSON.parse(sessionStorage.getItem('name')) || '',
+         email: JSON.parse(sessionStorage.getItem('email')) || '',
+         phone: JSON.parse(sessionStorage.getItem('phone')) || ''
       },
       validationSchema: Yup.object({
          name: Yup.string()
@@ -31,7 +33,10 @@ function Info() {
                return validator.isMobilePhone(value)
                })  
       }),
-      onSubmit: values => {
+      onSubmit: (values) => {
+         sessionStorage.setItem('name', JSON.stringify(values.name))
+         sessionStorage.setItem('email', JSON.stringify(values.email))
+         sessionStorage.setItem('phone', JSON.stringify(values.phone))
          navigate('/plan')
       }
    })
@@ -41,10 +46,10 @@ function Info() {
          <Desktop />
          <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
             <div>
-               <h1 className="mb-1  font-extrabold text-4xl">
+               <h1 className="mb-1  font-extrabold text-3xl">
                   Personal info
                </h1>
-               <p className="text-sm font-light">
+               <p className="text-sm">
                   Please provide your name, email address and phone number.
                </p>
             </div>
@@ -107,10 +112,7 @@ function Info() {
                      placeholder="e.g. +1 234 567 890" 
                      {...formik.getFieldProps('phone')}/>
                </label>
-               <button 
-                  className='text-md w-fit text-white px-6 rounded-lg py-2 self-end mt-20 bg-[rgb(2,41,90)]' >
-                  Next Step
-               </button>
+               <Next />
             </form>
          </div>
       </section>

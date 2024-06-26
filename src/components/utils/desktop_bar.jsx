@@ -4,7 +4,7 @@ function Desktop() {
   return (
     <nav className="sticky flex  flex-col gap-6 w-[274px] h-[568px] bg-nav" >
       <div className="flex ml-10 gap-4 items-center text-white mt-10">
-         <NavLink to={'/'} className="w-8 focus:bg-white h-8 text-md flex items-center justify-center border border-solid border-white text-white rounded-full">
+         <NavLink to={'/'} className="w-8 h-8 text-md flex items-center justify-center border border-solid border-white text-white rounded-full">
             1
          </NavLink>
          <div className="max-sm:hidden">
