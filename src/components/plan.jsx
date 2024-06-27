@@ -30,12 +30,10 @@ function Plan() {
             setChecker(true)
             setPlan(JSON.parse(sessionStorage.getItem('planText')))
          }
-      setCheckBox(newData)
       if (checkBox.val4 || checkBox.val5 || checkBox.val6)
          setShowToggle(true)
       else if (checkBox.val1 || checkBox.val3 || checkBox.val3)
          setShowToggle(false)
-
    }, [])
 
    const handleChange = () => {
@@ -87,7 +85,7 @@ function Plan() {
                                     onChange={handleChange}
                                     type="radio" 
                                     name="plan"
-                                    placeholder={key === 'val1' ? 'Arcade (Monthly) $9/mo mo' : key === 'val2' ? 'Advanced (Monthly) $12/mo mo' : 'Pro (Monthly) $15/mo mo'}  
+                                    placeholder={key === 'val1' ? 'Arcade (Monthly) $9/mo mo 9' : key === 'val2' ? 'Advanced (Monthly) $12/mo mo 12' : 'Pro (Monthly) $15/mo mo 15'}  
                                     id={key} 
                                     checked={checkBox[key]}
                                     value={key}
@@ -120,7 +118,7 @@ function Plan() {
                                     onChange={handleChange}
                                     type="radio" 
                                     name="plan"
-                                    placeholder={key === 'val4' ? 'Arcade (Monthly) $9/yr yr' : key === 'val5' ? 'Advanced (Yearly) $12/yr yr' : 'Pro (Yearly) $15/yr yr'}  
+                                    placeholder={key === 'val4' ? 'Arcade (Monthly) $90/yr yr 90' : key === 'val5' ? 'Advanced (Yearly) $120/yr yr 150' : 'Pro (Yearly) $150/yr yr 150'}  
                                     id={key} 
                                     checked={checkBox[key]}
                                     value={key}

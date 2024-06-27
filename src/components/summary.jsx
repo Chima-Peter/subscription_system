@@ -1,10 +1,29 @@
-import React from 'react'
+import { Confirm, Prev } from './utils/buttons'
+import Desktop from './utils/desktop_bar'
+import SummaryBox from './utils/summaryBox'
 
 function Summary() {
   return (
-    <div>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque maxime cum, doloremque eius nobis voluptate rerum, ratione, a placeat similique fugiat soluta corrupti dolor magnam! Blanditiis repellat saepe omnis magnam!
-    </div>
+    <main className='main font-body'>
+      <section className='section'>
+         <Desktop />
+         <div  className="mx-auto mt-7 text-[rgb(2,41,90)]">
+            <div>
+               <h1 className="mb-1 font-extrabold text-3xl">
+                  Finishing up
+               </h1>
+               <p className="text-sm">
+                  Double-check everything looks OK before confirmimg.
+               </p>
+            </div>
+            <SummaryBox />
+            <div className='mt-[1.8rem] flex items-center justify-between'>
+               <Prev back={'/add-on'}/>
+               <Confirm />
+            </div>
+         </div>
+      </section>
+    </main>
   )
 }
 

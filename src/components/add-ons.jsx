@@ -24,13 +24,16 @@ function AddOn() {
    //  if (storedCheckBox) {
    //    setCheckBox(storedCheckBox);
    //  }
-    const newData = JSON.parse(sessionStorage.getItem('planText')).split(' ')[3];
-    setPlan(newData);
+   if (JSON.parse(sessionStorage.getItem('planText')))
+   {
+      const newData = JSON.parse(sessionStorage.getItem('planText')).split(' ')[3];
+      setPlan(newData);
+   }
+    
   }, []);
 
   const handleChange = (event) => {
    const { value } = event.target;
-   console.log(event.target.placeholder)
    setError(false)
    const newData = priceBox
    !checkBox[value] ? priceBox[event.target.value] = event.target.placeholder: priceBox[event.target.value] = ''
