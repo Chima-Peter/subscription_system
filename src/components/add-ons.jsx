@@ -40,7 +40,6 @@ function AddOn() {
 
   const handleAddOn = (event) => {
     event.preventDefault();
-    console.log(checkBox, priceBox)
     if (!checkBox.val1 && !checkBox.val2 && !checkBox.val3) {
       setError(true)
     } else {
