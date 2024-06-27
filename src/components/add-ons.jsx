@@ -11,14 +11,14 @@ function AddOn() {
     val3: false,
   });
 
-//   useEffect(() => {
-//     const storedCheckBox = JSON.parse(sessionStorage.getItem('addOn'));
-//     if (storedCheckBox) {
-//       setCheckBox(storedCheckBox);
-//     }
-//     const newData = JSON.parse(sessionStorage.getItem('planText')).split(' ')[3];
-//     setPlan(newData);
-//   }, []);
+  useEffect(() => {
+   //  const storedCheckBox = JSON.parse(sessionStorage.getItem('addOn'));
+   //  if (storedCheckBox) {
+   //    setCheckBox(storedCheckBox);
+   //  }
+    const newData = JSON.parse(sessionStorage.getItem('planText')).split(' ')[3];
+    setPlan(newData);
+  }, []);
 
   const handleChange = (event) => {
     const { value } = event.target;

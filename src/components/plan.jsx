@@ -80,7 +80,7 @@ function Plan() {
                   <div className='flex gap-3'>
                      {
                         Object.keys(checkBox).map((key, index) => (
-                           (index < 3 && showToggle) && <div 
+                           (index < 3 && showToggle) && <div //Render the first 3 blocks
                                  key={key}
                                  className='flex gap-3'>
                                  <input
@@ -113,7 +113,7 @@ function Plan() {
                   <div className='flex gap-3'>
                      {
                         Object.keys(checkBox).map((key, index) => (
-                           ((index > 2) && !showToggle) && <div 
+                           ((index > 2) && !showToggle) && <div //Render the last 3 blocks
                                  key={key}
                                  className='flex gap-3'>
                                  <input
