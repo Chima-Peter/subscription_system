@@ -55,8 +55,12 @@ function AddOn() {
         <Desktop />
         <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
           <div>
-            <h1 className="mb-1  font-extrabold text-3xl">Pick add-ons</h1>
-            <p className="text-sm">Add-ons help enhance your gaming experience</p>
+            <h1 className="mb-1  font-extrabold text-3xl">
+               Pick add-ons
+            </h1>
+            <p className="text-sm">
+               Add-ons help enhance your gaming experience
+            </p>
           </div>
           <div className='mt-10 flex flex-col'>
             <form onSubmit={handleAddOn} noValidate autoComplete='on' className='flex flex-col gap-3'>
