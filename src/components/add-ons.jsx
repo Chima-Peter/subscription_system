@@ -13,6 +13,11 @@ function AddOn() {
     val2: false,
     val3: false,
   });
+  const [priceBox, setPriceBox] = useState({
+    val1: '',
+    val2: '',
+    val3: '',
+  });
 
   useEffect(() => {
    //  const storedCheckBox = JSON.parse(sessionStorage.getItem('addOn'));
@@ -24,19 +29,24 @@ function AddOn() {
   }, []);
 
   const handleChange = (event) => {
-    const { value } = event.target;
-    setError(false)
-    setCheckBox({ ...checkBox, [value]: !checkBox[value] }); 
+   const { value } = event.target;
+   console.log(event.target.placeholder)
+   setError(false)
+   const newData = priceBox
+   !checkBox[value] ? priceBox[event.target.value] = event.target.placeholder: priceBox[event.target.value] = ''
+   setPriceBox(newData)
+   setCheckBox({ ...checkBox, [value]: !checkBox[value] }); 
   };
 
   const handleAddOn = (event) => {
     event.preventDefault();
+    console.log(checkBox, priceBox)
     if (!checkBox.val1 && !checkBox.val2 && !checkBox.val3) {
       setError(true)
     } else {
       setError(false)
-      sessionStorage.setItem('addOn', JSON.stringify(checkBox));
-      navigate('/summary')
+      sessionStorage.setItem('addOn', JSON.stringify(priceBox));
+      // navigate('/summary')
     }
   };
 
@@ -64,6 +74,13 @@ function AddOn() {
                     value={key}
                     type="checkbox"
                     name={key}
+                    placeholder={
+                        key === 'val1'
+                           ? `1`
+                           : key === 'val2'
+                              ? `2`
+                              : `2`
+                      }
                     id={key}
                     className='cursor-pointer'
                   />
