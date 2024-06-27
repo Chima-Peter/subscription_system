@@ -46,7 +46,7 @@ function AddOn() {
     } else {
       setError(false)
       sessionStorage.setItem('addOn', JSON.stringify(priceBox));
-      // navigate('/summary')
+      navigate('/summary')
     }
   };
 
