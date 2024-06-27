@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function AddOn() {
    const navigate = useNavigate()
   const [plan, setPlan] = useState('');
+  const [error, setError] = useState(false)
   const [checkBox, setCheckBox] = useState({
     val1: false,
     val2: false,
@@ -24,14 +25,16 @@ function AddOn() {
 
   const handleChange = (event) => {
     const { value } = event.target;
+    setError(false)
     setCheckBox({ ...checkBox, [value]: !checkBox[value] }); 
   };
 
   const handleAddOn = (event) => {
     event.preventDefault();
     if (!checkBox.val1 && !checkBox.val2 && !checkBox.val3) {
-      return
+      setError(true)
     } else {
+      setError(false)
       sessionStorage.setItem('addOn', JSON.stringify(checkBox));
       navigate('/summary')
     }
@@ -52,7 +55,7 @@ function AddOn() {
                 <div
                   key={key}
                   className={`flex gap-4 cursor-pointer items-center rounded-lg text-[hsl(213,96%,18%)] font-body w-full p-4 border hover:border-[hsl(243,100%,62%)] ${
-                    checkBox[key] ? 'border border-[hsl(243,100%,62%)] bg-[hsl(206,94%,87%)] rounded-lg bg-clip-padding' : ' border-[hsl(229,24%,87%)]'
+                    checkBox[key] ? 'border border-[hsl(243,100%,62%)] bg-[hsl(206,94%,87%)] rounded-lg bg-clip-padding' : error ? 'border-red-500' : 'border-[hsl(229,24%,87%)]'
                   }`}
                 >
                   <input
