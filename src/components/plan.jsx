@@ -31,6 +31,7 @@ function Plan() {
                setChecker(true)
             }
       })
+      setPlan(JSON.parse(sessionStorage.getItem('planText')))
       setCheckBox(newData)
             if (checkBox.val4 || checkBox.val5 || checkBox.val6)
                setShowToggle(false)
