@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { Next, Prev } from './utils/buttons';
 import Desktop from './utils/desktop_bar';
 import AddOnBlock from './utils/addonblock';
+import { useNavigate } from 'react-router-dom';
 
 function AddOn() {
+   const navigate = useNavigate()
   const [plan, setPlan] = useState('');
   const [checkBox, setCheckBox] = useState({
     val1: false,
@@ -28,10 +30,10 @@ function AddOn() {
   const handleAddOn = (event) => {
     event.preventDefault();
     if (!checkBox.val1 && !checkBox.val2 && !checkBox.val3) {
-      console.log('fail');
+      return
     } else {
       sessionStorage.setItem('addOn', JSON.stringify(checkBox));
-      console.log('success');
+      navigate('/summary')
     }
   };
 
