@@ -6,7 +6,7 @@ function Summary() {
   return (
     <main className='main font-body'>
       <section className='section'>
-         <Desktop />
+         <Desktop link4={true} />
          <div  className="mx-auto mt-7 text-[rgb(2,41,90)]">
             <div>
                <h1 className="mb-1 font-extrabold text-3xl">

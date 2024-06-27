@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom"
 
-function Desktop() {
+function Desktop({link1=false, link2=false, link3=false, link4=false}) {
   return (
     <nav className="sticky flex  flex-col gap-6 w-[274px] h-[568px] bg-nav" >
       <div className="flex ml-10 gap-4 items-center text-white mt-10">
-         <NavLink to={'/'} className="w-8 h-8 text-md flex items-center justify-center border border-solid border-white text-white rounded-full">
+         <div 
+            className={`w-8 h-8 text-md flex items-center justify-center border border-solid border-white rounded-full ${link1 ? 'bg-[hsl(206,94%,87%)] border-[hsl(206,94%,87%)] text-[hsl(213,96%,18%)] font-bold' : ' text-white'}`}>
             1
-         </NavLink>
+         </div>
          <div className="max-sm:hidden">
             <p className="text-xs font-extralight">
                STEP 1
@@ -16,10 +17,12 @@ function Desktop() {
             </h1>
          </div>
       </div>
-      <div className="flex ml-10 gap-4 items-center text-white">
-         <NavLink to={'/plan'} className="w-8 active:bg-[hsl(206, 94%, 87%)] h-8 text-md flex items-center justify-center border border-solid border-white text-white rounded-full">
+      <div 
+         className="flex ml-10 gap-4 items-center text-white">
+         <div 
+            className={`w-8 h-8 text-md flex items-center justify-center border border-solid border-white rounded-full ${link2 ? 'bg-[hsl(206,94%,87%)] border-[hsl(206,94%,87%)] text-[hsl(213,96%,18%)] font-bold' : ' text-white'}`}>
             2
-         </NavLink>
+         </div>
          <div className="max-sm:hidden">
             <p className="text-xs font-extralight">
                STEP 2
@@ -29,10 +32,12 @@ function Desktop() {
             </h1>
          </div>
       </div>
-      <div className="flex ml-10 gap-4 items-center text-white">
-         <NavLink to={'/add-on'} className="w-8 active:bg-[hsl(206, 94%, 87%)] h-8 text-md flex items-center justify-center border border-solid border-white text-white rounded-full">
+      <div 
+      className="flex ml-10 gap-4 items-center text-white">
+         <div 
+            className={`w-8 h-8 text-md flex items-center justify-center border border-solid border-white rounded-full ${link3 ? 'bg-[hsl(206,94%,87%)] border-[hsl(206,94%,87%)] text-[hsl(213,96%,18%)] font-bold' : ' text-white'}`}>
             3
-         </NavLink>
+         </div>
          <div className="max-sm:hidden">
             <p className="text-xs font-extralight">
                STEP 3
@@ -43,9 +48,10 @@ function Desktop() {
          </div>
       </div>
       <div className="flex ml-10 gap-4 items-center text-white">
-         <NavLink to={'/summary'} className="w-8 active:bg-[hsl(206, 94%, 87%)] h-8 text-md flex items-center justify-center border border-solid border-white text-white rounded-full">
+         <div 
+            className={`w-8 h-8 text-md flex items-center justify-center border border-solid border-white rounded-full ${link4 ? 'bg-[hsl(206,94%,87%)] border-[hsl(206,94%,87%)] text-[hsl(213,96%,18%)] font-bold' : ' text-white'}`}>
             4
-         </NavLink>
+         </div>
          <div className="max-sm:hidden">
             <p className="text-xs font-extralight">
                STEP 4
