@@ -4,6 +4,7 @@ import Info from "./components/info"
 import {Plan} from "./components/plan"
 import AddOn from "./components/add-ons"
 import Summary from "./components/summary"
+import Thanks from "./components/thanks"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
          <Route path="plan" element={<Plan />} />
          <Route path="add-on" element={<AddOn />} />
          <Route path="summary" element={<Summary />} />
+         <Route path="thanks" element={<Thanks/>} />
       </Routes>
    </BrowserRouter>
   )

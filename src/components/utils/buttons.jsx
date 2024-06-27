@@ -20,7 +20,7 @@ function Prev({back}) {
       )
    }
 
-   function Confirm(link) {
+   function Confirm({link}) {
       return (
        <Link
          replace

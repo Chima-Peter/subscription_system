@@ -19,7 +19,7 @@ function Summary() {
             <SummaryBox />
             <div className='mt-[1.8rem] flex items-center justify-between'>
                <Prev back={'/add-on'}/>
-               <Confirm />
+               <Confirm link={'/thanks'} />
             </div>
          </div>
       </section>
