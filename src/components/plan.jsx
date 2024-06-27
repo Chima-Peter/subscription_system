@@ -23,20 +23,18 @@ function Plan() {
    )
 
    useEffect(() => {
-      const newData = checkBox
-      Object.keys(newData).forEach((key) => {
-         if (sessionStorage.getItem('plan'))
-            {
-               newData[key] = (JSON.parse(sessionStorage.getItem('plan')))[key]
-               setChecker(true)
-            }
-      })
-      setPlan(JSON.parse(sessionStorage.getItem('planText')))
+      const newData = JSON.parse(sessionStorage.getItem('plan'))
+      if (newData)
+         {
+            setCheckBox(newData)
+            setChecker(true)
+            setPlan(JSON.parse(sessionStorage.getItem('planText')))
+         }
       setCheckBox(newData)
-            if (checkBox.val4 || checkBox.val5 || checkBox.val6)
-               setShowToggle(false)
-            else if (checkBox.val1 || checkBox.val3 || checkBox.val3)
-               setShowToggle(true)
+      if (checkBox.val4 || checkBox.val5 || checkBox.val6)
+         setShowToggle(true)
+      else if (checkBox.val1 || checkBox.val3 || checkBox.val3)
+         setShowToggle(false)
 
    }, [])
 
@@ -78,99 +76,73 @@ function Plan() {
                </p>
             </div>
             <div className='mt-10 flex flex-col'>
-               <form onSubmit={handlePlan} noValidate>
-                  {
-                     showToggle && <div className='flex gap-3'>
-                        <input
-                           onChange={handleChange}
-                           type="radio" 
-                           name="plan"
-                           placeholder='Arcade (Monthly) $9/mo mo'  
-                           id="arcade" 
-                           checked={checkBox.val1}
-                           value={'val1'}
-                           className='hidden peer/arcade'/>
-                        <label 
-                        htmlFor="arcade" 
-                        className='p-0 m-0 peer-checked/arcade:hover:border-0 peer-checked/arcade:border-[hsl(243,100%,62%)] peer-checked/arcade:border peer-checked/arcade:bg-[hsl(206,94%,87%)] peer-checked/arcade:rounded-lg peer-checked/arcade:bg-clip-padding'>
-                           <Block imgText={'icon-arcade.svg'} text={'Arcade'} pricing={'$9/mo'} />
-                        </label>
-                        <input
-                           onChange={handleChange}
-                           type="radio" 
-                           name='plan'
-                           id='adv' 
-                           checked={checkBox.val2}
-                           value={'val2'}
-                           placeholder='Advanced (Monthly) $12/mo mo' 
-                           className='peer/adv hidden' />
-                           <label 
-                           htmlFor="adv" 
-                           className='peer-checked/adv:border-[hsl(243,100%,62%)] peer-checked/adv:border peer-checked/adv:bg-[hsl(206,94%,87%)] peer-checked/adv:rounded-lg peer-checked/adv:hover:border-0 peer-checked/adv:bg-clip-padding'>
-                              <Block imgText={'icon-advanced.svg'} text={'Advanced'} pricing={'$12/mo'} />
-                           </label>
-                        <input
-                           onChange={handleChange}
-                           type="radio" 
-                           name="plan"
-                           placeholder='Pro (Monthly) $15/mo mo'  
-                           id="pro" 
-                           checked={checkBox.val3}
-                           value={'val3'}
-                           className='peer/pro hidden'/>
-                        <label 
-                           htmlFor="pro" 
-                           className='peer-checked/pro:hover:border-0 peer-checked/pro:border-[hsl(243,100%,62%)] peer-checked/pro:border peer-checked/pro:bg-[hsl(206,94%,87%)] peer-checked/pro:rounded-lg peer-checked/pro:bg-clip-padding'>
-                           <Block imgText={'icon-pro.svg'} text={'Pro'} pricing={'$15/mo'} />
-                        </label>
-                     </div>
-                  }
-                  {
-                     !showToggle && <div className='flex gap-3'>
-                        <input
-                           onChange={handleChange}
-                           type="radio" 
-                           name="plan" 
-                           checked={checkBox.val4}
-                           value={'val4'}
-                           id="arcade"
-                           placeholder='Arcade (Yearly) $90/yr yr'  
-                           className='hidden peer/arcade'/>
-                        <label 
-                        htmlFor="arcade" 
-                        className='p-0 m-0 peer-checked/arcade:hover:border-0 peer-checked/arcade:border-[hsl(243,100%,62%)] peer-checked/arcade:border peer-checked/arcade:bg-[hsl(206,94%,87%)] peer-checked/arcade:rounded-lg peer-checked/arcade:bg-clip-padding'>
-                           <Block imgText={'icon-arcade.svg'} text={'Arcade'} pricing={'$90/yr'} month={'2 months free'} />
-                        </label>
-                        <input
-                           onChange={handleChange}
-                           type="radio" 
-                           name='plan'
-                           id='adv' 
-                           checked={checkBox.val5}
-                           value={'val5'}
-                           placeholder='Advanced (Yearly) $120/yr yr' 
-                           className='peer/adv hidden' />
-                           <label 
-                           htmlFor="adv" 
-                           className='peer-checked/adv:border-[hsl(243,100%,62%)] peer-checked/adv:border peer-checked/adv:bg-[hsl(206,94%,87%)] peer-checked/adv:rounded-lg peer-checked/adv:hover:border-0 peer-checked/adv:bg-clip-padding'>
-                              <Block imgText={'icon-advanced.svg'} text={'Advanced'} pricing={'$120/yr'} month={'2 months free'} />
-                           </label>
-                        <input
-                           onChange={handleChange}
-                           type="radio" 
-                           name="plan" 
-                           checked={checkBox.val6}
-                           value={'val6'}
-                           id="pro" 
-                           placeholder='Pro (Yearly) $150/yr yr' 
-                           className='peer/pro hidden'/>
-                        <label 
-                           htmlFor="pro" 
-                           className='peer-checked/pro:hover:border-0 peer-checked/pro:border-[hsl(243,100%,62%)] peer-checked/pro:border peer-checked/pro:bg-[hsl(206,94%,87%)] peer-checked/pro:rounded-lg peer-checked/pro:bg-clip-padding'>
-                           <Block imgText={'icon-pro.svg'} text={'Pro'} pricing={'$150/yr'} month={'2 months free'} />
-                        </label>
-                     </div>
-                  }
+               <form noValidate onSubmit={handlePlan}>
+                  <div className='flex gap-3'>
+                     {
+                        Object.keys(checkBox).map((key, index) => (
+                           (index < 3 && showToggle) && <div 
+                                 key={key}
+                                 className='flex gap-3'>
+                                 <input
+                                    onChange={handleChange}
+                                    type="radio" 
+                                    name="plan"
+                                    placeholder={key === 'val1' ? 'Arcade (Monthly) $9/mo mo' : key === 'val2' ? 'Advanced (Monthly) $12/mo mo' : 'Pro (Monthly) $15/mo mo'}  
+                                    id={key} 
+                                    checked={checkBox[key]}
+                                    value={key}
+                                    className='peer/pro hidden'/>
+                                 <label 
+                                    htmlFor={key} 
+                                    className='peer-checked/pro:hover:border-0 peer-checked/pro:border-[hsl(243,100%,62%)] peer-checked/pro:border peer-checked/pro:bg-[hsl(206,94%,87%)] peer-checked/pro:rounded-lg peer-checked/pro:bg-clip-padding'>
+                                    <Block 
+                                       imgText={
+                                          key === 'val1' ? 'icon-arcade.svg' : key === 'val2' ? 'icon-advanced.svg' : 'icon-pro.svg'
+                                       } 
+                                       text={
+                                          key === 'val1' ? 'Arcade' : key === 'val2' ? 'Advanced' : 'Pro'
+                                       } 
+                                       pricing={
+                                          key === 'val1' ? '$9/mo' : key === 'val2' ? '$12/mo' : '$15/mo'
+                                       } />
+                                 </label>
+                           </div>
+                        ))
+                     }
+                  </div>
+                  <div className='flex gap-3'>
+                     {
+                        Object.keys(checkBox).map((key, index) => (
+                           ((index > 2) && !showToggle) && <div 
+                                 key={key}
+                                 className='flex gap-3'>
+                                 <input
+                                    onChange={handleChange}
+                                    type="radio" 
+                                    name="plan"
+                                    placeholder={key === 'val4' ? 'Arcade (Monthly) $9/yr yr' : key === 'val5' ? 'Advanced (Yearly) $12/yr yr' : 'Pro (Yearly) $15/yr yr'}  
+                                    id={key} 
+                                    checked={checkBox[key]}
+                                    value={key}
+                                    className='peer/pro hidden'/>
+                                 <label 
+                                    htmlFor={key} 
+                                    className='peer-checked/pro:hover:border-0 peer-checked/pro:border-[hsl(243,100%,62%)] peer-checked/pro:border peer-checked/pro:bg-[hsl(206,94%,87%)] peer-checked/pro:rounded-lg peer-checked/pro:bg-clip-padding'>
+                                    <Block 
+                                       imgText={
+                                          key === 'val4' ? 'icon-arcade.svg' : key === 'val5' ? 'icon-advanced.svg' : 'icon-pro.svg'
+                                       } 
+                                       text={
+                                          key === 'val4' ? 'Arcade' : key === 'val5' ? 'Advanced' : 'Pro'
+                                       } 
+                                       pricing={
+                                          key === 'val4' ? '$9/yr' : key === 'val5' ? '$12/yr' : '$15/yr'
+                                       } />
+                                 </label>
+                           </div>
+                        ))
+                     }
+                  </div>
                   <toggleBar.Provider value={{setShowToggle,  showToggle}}>
                      <Toggle />
                   </toggleBar.Provider>
