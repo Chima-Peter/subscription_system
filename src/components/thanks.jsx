@@ -1,8 +1,19 @@
+import Desktop from "./utils/desktop_bar"
+
 function Thanks() {
   return (
     <main className="main">
-      <section className="">
-         
+      <section className="section">
+         <Desktop />
+         <div className="m-auto flex flex-col justify-center items-center gap-3 text-[rgb(2,41,90)]">
+            <img src="/images/components/thanks/icon-thank-you.svg" width={'100px'} alt="THAKS FOR SUBSCRIBING" />
+            <h3 className="mt-4 font-bold text-3xl">
+               Thank you!
+            </h3>
+            <p className="text-sm w-[380px] text-center font-normal">
+               Thanks for confirming your subscription! We hope you have fun using out platform. If you ever need support, please feel free to email us at support@loremgaming.com
+            </p>
+         </div>
       </section>
     </main>
   )
