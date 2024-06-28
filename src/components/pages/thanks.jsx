@@ -1,10 +1,13 @@
+import MediaQuery from "react-responsive"
 import Desktop from "../utils/desktop_bar"
 
 function Thanks() {
   return (
     <main className="main">
       <section className="section">
-         <Desktop link4={true} />
+         <MediaQuery minWidth={787}>
+            <Desktop link4={true} />
+         </MediaQuery>
          <div className="m-auto flex flex-col justify-center items-center gap-3 text-[rgb(2,41,90)]">
             <img src="/subscription_system/images/components/thanks/icon-thank-you.svg" width={'100px'} alt="THAKS FOR SUBSCRIBING" />
             <h3 className="mt-4 font-bold text-3xl">

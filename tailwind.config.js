@@ -13,6 +13,9 @@ export default {
          'body' : "Ubuntu"
       }
     },
+    screens: {
+      md: '787px'
+    }
   },
   plugins: [],
 }
