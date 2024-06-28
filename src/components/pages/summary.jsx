@@ -1,4 +1,5 @@
 import { Confirm, Prev } from '../utils/buttons'
+import MediaQuery from 'react-responsive';
 import Desktop from '../utils/desktop_bar'
 import SummaryBox from '../utils/summaryBox'
 
@@ -11,7 +12,7 @@ function Summary() {
          </MediaQuery>
          <div  className="mx-auto mt-7 text-[rgb(2,41,90)]">
             <div>
-               <h1 className="mb-1 font-extrabold text-3xl">
+               <h1 className="md:[mb-1 font-extrabold text-3xl] max-md:[mb-1 font-extrabold text-3xl text-red-500]">
                   Finishing up
                </h1>
                <p className="text-sm">

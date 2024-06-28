@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from 'react'
 import { Block } from '../utils/block'
 import { Next, Prev } from '../utils/buttons'
 import Desktop from '../utils/desktop_bar'
+import MediaQuery from 'react-responsive';
 import Toggle from '../utils/toggle'
 import { useNavigate } from 'react-router-dom'
 

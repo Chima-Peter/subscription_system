@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import validator from 'validator'
 import { useNavigate } from "react-router-dom"
+import MediaQuery from 'react-responsive';
 import { Next } from "../utils/buttons"
 
 
