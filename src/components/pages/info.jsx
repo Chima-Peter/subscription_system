@@ -1,10 +1,9 @@
-import Desktop from "./utils/desktop_bar"
+import Desktop from "../utils/desktop_bar"
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import validator from 'validator'
-import '../index.css'
 import { useNavigate } from "react-router-dom"
-import { Next } from "./utils/buttons"
+import { Next } from "../utils/buttons"
 
 
 function Info() {

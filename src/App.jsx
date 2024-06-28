@@ -1,10 +1,10 @@
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom"
-import ErrorPage from "./components/errorpage"
-import Info from "./components/info"
-import {Plan} from "./components/plan"
-import AddOn from "./components/add-ons"
-import Summary from "./components/summary"
-import Thanks from "./components/thanks"
+import ErrorPage from "./components/pages/errorpage"
+import Info from "./components/pages/info"
+import {Plan} from "./components/pages/plan"
+import AddOn from "./components/pages/add-ons"
+import Summary from "./components/pages/summary"
+import Thanks from "./components/pages/thanks"
 
 function App() {
 

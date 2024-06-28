@@ -1,4 +1,4 @@
-import Desktop from "./utils/desktop_bar"
+import Desktop from "../utils/desktop_bar"
 
 function Thanks() {
   return (

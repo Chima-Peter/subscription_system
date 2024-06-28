@@ -1,6 +1,6 @@
-import { Confirm, Prev } from './utils/buttons'
-import Desktop from './utils/desktop_bar'
-import SummaryBox from './utils/summaryBox'
+import { Confirm, Prev } from '../utils/buttons'
+import Desktop from '../utils/desktop_bar'
+import SummaryBox from '../utils/summaryBox'
 
 function Summary() {
   return (

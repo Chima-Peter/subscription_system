@@ -2,7 +2,7 @@ import Icon from '@mdi/react';
 import { mdiToggleSwitch } from '@mdi/js';
 import { mdiToggleSwitchOff } from '@mdi/js';
 import { useContext, useState } from 'react';
-import { toggleBar } from '../plan';
+import { toggleBar } from '../pages/plan';
 
 function Toggle() {
    const [toggle, setToggle] = useState(true)

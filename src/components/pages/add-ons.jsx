@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Next, Prev } from './utils/buttons';
-import Desktop from './utils/desktop_bar';
-import AddOnBlock from './utils/addonblock';
+import { Next, Prev } from '../utils/buttons';
+import Desktop from '../utils/desktop_bar';
+import AddOnBlock from '../utils/addonblock';
 import { useNavigate } from 'react-router-dom';
 
 function AddOn() {
@@ -81,7 +81,7 @@ function AddOn() {
                     type="checkbox"
                     name={key}
                     placeholder={
-                        plan == 'mo' ? 
+                        plan === 'mo' ? 
                            key === 'val1'
                               ? `1`
                            : key === 'val2'
@@ -108,11 +108,18 @@ function AddOn() {
                             : 'Customise theme on your profile'
                       }
                       pricing={
-                        key === 'val1'
+                        plan === 'mo' ?
+                           key === 'val1'
                            ? `+$1/${plan}`
                            : key === 'val2'
                               ? `+$2/${plan}`
                               : `+$2/${plan}`
+                        : 
+                           key === 'val1'
+                           ? `+$10/${plan}`
+                           : key === 'val2'
+                              ? `+$20/${plan}`
+                              : `+$20/${plan}`
                       }
                     />
                   </label>

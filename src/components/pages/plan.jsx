@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from 'react'
-import { Block } from './utils/block'
-import { Next, Prev } from './utils/buttons'
-import Desktop from './utils/desktop_bar'
-import Toggle from './utils/toggle'
+import { Block } from '../utils/block'
+import { Next, Prev } from '../utils/buttons'
+import Desktop from '../utils/desktop_bar'
+import Toggle from '../utils/toggle'
 import { useNavigate } from 'react-router-dom'
 
 const toggleBar = createContext()
@@ -118,7 +118,7 @@ function Plan() {
                                     onChange={handleChange}
                                     type="radio" 
                                     name="plan"
-                                    placeholder={key === 'val4' ? 'Arcade (Monthly) $90/yr yr 90' : key === 'val5' ? 'Advanced (Yearly) $120/yr yr 150' : 'Pro (Yearly) $150/yr yr 150'}  
+                                    placeholder={key === 'val4' ? 'Arcade (Monthly) $90/yr yr 90' : key === 'val5' ? 'Advanced (Yearly) $120/yr yr 120' : 'Pro (Yearly) $150/yr yr 150'}  
                                     id={key} 
                                     checked={checkBox[key]}
                                     value={key}
