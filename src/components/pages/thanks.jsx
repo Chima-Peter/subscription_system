@@ -6,7 +6,7 @@ function Thanks() {
       <section className="section">
          <Desktop link4={true} />
          <div className="m-auto flex flex-col justify-center items-center gap-3 text-[rgb(2,41,90)]">
-            <img src="/images/components/thanks/icon-thank-you.svg" width={'100px'} alt="THAKS FOR SUBSCRIBING" />
+            <img src="/subscription_system/images/components/thanks/icon-thank-you.svg" width={'100px'} alt="THAKS FOR SUBSCRIBING" />
             <h3 className="mt-4 font-bold text-3xl">
                Thank you!
             </h3>
