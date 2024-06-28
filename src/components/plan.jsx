@@ -134,7 +134,7 @@ function Plan() {
                                           key === 'val4' ? 'Arcade' : key === 'val5' ? 'Advanced' : 'Pro'
                                        } 
                                        pricing={
-                                          key === 'val4' ? '$9/yr' : key === 'val5' ? '$12/yr' : '$15/yr'
+                                          key === 'val4' ? '$90/yr' : key === 'val5' ? '$120/yr' : '$150/yr'
                                        } />
                                  </label>
                            </div>

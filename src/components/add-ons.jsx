@@ -81,11 +81,18 @@ function AddOn() {
                     type="checkbox"
                     name={key}
                     placeholder={
-                        key === 'val1'
-                           ? `1`
+                        plan == 'mo' ? 
+                           key === 'val1'
+                              ? `1`
                            : key === 'val2'
                               ? `2`
                               : `2`
+                        : 
+                           key === 'val1'
+                              ? `10`
+                           : key === 'val2'
+                              ? `20`
+                              : `20`
                       }
                     id={key}
                     className='cursor-pointer'
