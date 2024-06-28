@@ -9,6 +9,7 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
   - [Screenshot](#screenshot)
   - [Links](#links)
   - [Built with](#built-with)
+  - [What I Learnt](#what-i-learnt)
 
 
 ## Overview
@@ -52,4 +53,9 @@ Users should be able to:
 - Tailwind CSS
 - Formik
 - Yup
+
+
+### What I Learnt
+
+This project was my first attempt at using alot of 3rd party libraries for my development as I used formik and yup for managing my form. I also learnt how and why it's better to write resuable components. Conclusively, i learnt how to use tailwind better and how to merge it with react to easily write conditional styling.
 
