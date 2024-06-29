@@ -48,26 +48,26 @@ function Info() {
          </MediaQuery>
          <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
             <div>
-               <h1 className="mb-1  font-extrabold text-3xl">
+               <h1 className="mb-1  font-extrabold text-2xl">
                   Personal info
                </h1>
-               <p className="text-sm">
+               <p className="text-[12.5px]">
                   Please provide your name, email address and phone number.
                </p>
             </div>
             <form onSubmit={formik.handleSubmit} noValidate className="mt-10 flex flex-col gap-5">
-            <label htmlFor="name" className="font-medium text-sm">
+            <label htmlFor="name" className="font-medium text-[12.5px]">
                <div className="flex justify-between">
                   Name
                   {
                      (formik.touched.name && formik.errors.name) && 
-                     <span className="font-semibold self-end text-xs ml-100  text-red-500 ">
+                     <span className="font-semibold self-end text-[9px] text-red-500 ">
                         {formik.errors.name}
                      </span>
                   }
                </div>
                <input 
-                     className={`w-full autofill:bg-clip-text autofill:hover:bg-clip-text mt-1 ${ formik.errors.name ? 'border-red-500 focus:border-red-500' : '' } rounded-lg bg-white p-3 border placeholder:text-sm focus:outline-none focus:border-2 cursor-pointer placeholder:font-normal font-medium capitalize placeholder:normal-case text-md text-[hsl(213,96%,18%)] focus:border-[hsl(243,100%,62%)] border-[hsl(229,24%,87%)] border-solid`} 
+                     className={`w-full autofill:bg-clip-text autofill:hover:bg-clip-text mt-1 ${ formik.errors.name ? 'border-red-500 focus:border-red-500' : '' } rounded-md bg-white p-2 border placeholder:text-xs focus:outline-none focus:border-2 cursor-pointer placeholder:font-normal font-medium capitalize placeholder:normal-case text-md text-[hsl(213,96%,18%)] focus:border-[hsl(243,100%,62%)] border-[hsl(229,24%,87%)] border-solid`} 
                      type="text"
                      autoFocus 
                      id="name"     
@@ -76,38 +76,38 @@ function Info() {
                      {...formik.getFieldProps('name')}
                       />
                </label>
-               <label htmlFor="email" className="text-sm font-medium">
+               <label htmlFor="email" className="text-[12.5px] font-medium">
                   <div className="flex justify-between">
                      Email Address
                      {
                         (formik.touched.email && formik.errors.email) && 
-                        <span className="font-semibold self-end text-xs ml-100  text-red-500 ">
+                        <span className="font-semibold self-end text-[9px] ml-100  text-red-500 ">
                            {formik.errors.email}
                         </span>
                      }
                </div>
                   <input 
-                     className={`w-full autofill:bg-clip-text autofill:hover:bg-clip-text ${ formik.errors.email ? 'border-red-500 focus:border-red-500' : '' }   mt-1 rounded-lg bg-white p-3 border placeholder:text-sm focus:outline-none focus:border-2 cursor-pointer placeholder:font-normal  font-medium text-md text-[hsl(213,96%,18%)] focus:border-[hsl(243,100%,62%)] border-[hsl(229,24%,87%)] border-solid`} 
+                     className={`w-full autofill:bg-clip-text autofill:hover:bg-clip-text ${ formik.errors.email ? 'border-red-500 focus:border-red-500' : '' }   mt-1 rounded-md bg-white p-2 border placeholder:text-xs focus:outline-none focus:border-2 cursor-pointer placeholder:font-normal  font-medium text-md text-[hsl(213,96%,18%)] focus:border-[hsl(243,100%,62%)] border-[hsl(229,24%,87%)] border-solid`} 
                      type="email" 
                      id="email"
                      name="email" 
                      placeholder="e.g. stephenking@lorem.com"
                      {...formik.getFieldProps('email')} />
                </label>
-               <label htmlFor="phone" className="font-medium text-sm">
+               <label htmlFor="phone" className="font-medium text-[12.5px]">
                   <div className="flex justify-between">
                      Phone Number
                      <p className="text-xs text-red-500 font-semibold">
                         {
                         (formik.touched.phone && formik.errors.phone) && 
-                        <span className="font-semibold self-end text-xs ml-100  text-red-500 ">
+                        <span className="font-semibold self-end text-[9px] ml-100  text-red-500 ">
                            {formik.errors.phone}
                         </span>
                      }
                      </p>
                   </div>
                   <input 
-                     className={`w-full autofill:bg-clip-text autofill:hover:bg-clip-text ${ formik.errors.phone ? 'border-red-500 focus:border-red-500' : '' }  mt-1 rounded-lg bg-white p-3 border placeholder:text-sm focus:outline-none focus:border-2 cursor-pointer placeholder:font-normal font-medium text-md text-[hsl(213,96%,18%)] focus:border-[hsl(243,100%,62%)] border-[hsl(229,24%,87%)] border-solid`} 
+                     className={`w-full autofill:bg-clip-text autofill:hover:bg-clip-text ${ formik.errors.phone ? 'border-red-500 focus:border-red-500' : '' }  mt-1 rounded-md bg-white p-2 border placeholder:text-xs focus:outline-none focus:border-2 cursor-pointer placeholder:font-normal font-medium text-md text-[hsl(213,96%,18%)] focus:border-[hsl(243,100%,62%)] border-[hsl(229,24%,87%)] border-solid`} 
                      type="tel" 
                      id="phone" 
                      name="phone"                      

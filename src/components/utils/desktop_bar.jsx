@@ -12,7 +12,7 @@ function Desktop({link1=false, link2=false, link3=false, link4=false}) {
             <p className="text-xs font-extralight">
                STEP 1
             </p>
-            <h1 className="font-semibold  text-[14px]" >
+            <h1 className="font-semibold  text-xs" >
                YOUR INFO
             </h1>
          </div>
@@ -27,7 +27,7 @@ function Desktop({link1=false, link2=false, link3=false, link4=false}) {
             <p className="text-xs font-extralight">
                STEP 2
             </p>
-            <h1 className="font-semibold  text-[14px]" >
+            <h1 className="font-semibold  text-xs" >
                SELECT PLAN
             </h1>
          </div>
@@ -42,7 +42,7 @@ function Desktop({link1=false, link2=false, link3=false, link4=false}) {
             <p className="text-xs font-extralight">
                STEP 3
             </p>
-            <h1 className="font-semibold  text-[14px]" >
+            <h1 className="font-semibold  text-xs" >
                ADD-ONS
             </h1>
          </div>
@@ -56,7 +56,7 @@ function Desktop({link1=false, link2=false, link3=false, link4=false}) {
             <p className="text-xs font-extralight">
                STEP 4
             </p>
-            <h1 className="font-semibold  text-[14px]" >
+            <h1 className="font-semibold  text-xs" >
                SUMMARY
             </h1>
          </div>
