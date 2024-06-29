@@ -5,6 +5,7 @@ import Desktop from '../utils/desktop_bar'
 import MediaQuery from 'react-responsive';
 import Toggle from '../utils/toggle'
 import { useNavigate } from 'react-router-dom'
+import Mobile from '../utils/mobileBar';
 
 const toggleBar = createContext()
 function Plan() {
@@ -62,23 +63,26 @@ function Plan() {
    }
    
   return (
-    <main className='main font-body'>
-      <section className='section'>
+    <main className='main font-body gap-20'>
+    <MediaQuery maxWidth={786}>
+         <Mobile link2={true} />
+      </MediaQuery>
+      <section className='section max-md:px-6 max-md:mt-0 max-md:py-10 max-md:absolute max-md:top-0 translate-y-[100px] max-md:mb-10'>
          <MediaQuery minWidth={787}>
             <Desktop link2={true} />
          </MediaQuery>
-         <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
+         <div className="mx-auto md:mt-7 text-[rgb(2,41,90)]">
             <div>
                <h1 className="mb-1  font-extrabold text-2xl">
                   Select your plan
                </h1>
-               <p className="text-[12.5px]">
+               <p className="text-md md:text-[12.5px]">
                   You have the option of monthly or yearly billing
                </p>
             </div>
-            <div className='mt-10 flex flex-col'>
+            <div className='mt-4 md:mt-10 flex flex-col'>
                <form noValidate onSubmit={handlePlan}>
-                  <div className='flex gap-3'>
+                  <div className='flex flex-col w-100 md:flex-row gap-3'>
                      {
                         Object.keys(checkBox).map((key, index) => (
                            (index < 3 && showToggle) && <div //Render the first 3 blocks
@@ -111,7 +115,7 @@ function Plan() {
                         ))
                      }
                   </div>
-                  <div className='flex gap-3'>
+                  <div className='flex flex-col w-100 md:flex-row gap-3'>
                      {
                         Object.keys(checkBox).map((key, index) => (
                            ((index > 2) && !showToggle) && <div //Render the last 3 blocks
@@ -147,14 +151,22 @@ function Plan() {
                   <toggleBar.Provider value={{setShowToggle,  showToggle}}>
                      <Toggle />
                   </toggleBar.Provider>
-                  <div className='mt-[3.6rem] flex justify-between'>
-                     <Prev back={'/'}/>
-                     <Next />
-                  </div>
+                  <MediaQuery minWidth={787}>
+                     <div className='mt-[3.6rem] flex justify-between'>
+                        <Prev back={'/'}/>
+                        <Next />
+                     </div>
+                  </MediaQuery>
                </form>
             </div>
          </div>
       </section>
+      <MediaQuery maxWidth={786}>
+         <div className='flex justify-between  w-[100%] sticky bottom-0 p-4 h-[80px] items-center bg-white'>
+            <Prev back={'/'}/>
+            <Next />
+         </div>
+      </MediaQuery>
     </main>
   )
 }

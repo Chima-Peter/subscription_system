@@ -42,7 +42,7 @@ function Info() {
    })
   return (
     <main className="main font-body">
-      <section className="section" >
+      <section className="md:section bg-white rounded-md p-4 w-80" >
          <MediaQuery minWidth={787}>
             <Desktop link1={true} />
          </MediaQuery>
