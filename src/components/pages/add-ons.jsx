@@ -61,10 +61,10 @@ function AddOn() {
          </MediaQuery>
         <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
           <div>
-            <h1 className="mb-1  font-extrabold text-3xl">
+            <h1 className="mb-1  font-extrabold text-2xl">
                Pick add-ons
             </h1>
-            <p className="text-sm">
+            <p className="text-[12.5px]">
                Add-ons help enhance your gaming experience
             </p>
           </div>
