@@ -57,7 +57,7 @@ function AddOn() {
     <main className='main font-body'>
       <section className='section'>
         <MediaQuery minWidth={787}>
-            <Desktop link4={true} />
+            <Desktop link3={true} />
          </MediaQuery>
         <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
           <div>

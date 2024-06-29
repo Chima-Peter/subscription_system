@@ -42,9 +42,9 @@ function Info() {
    })
   return (
     <main className="main font-body">
-      <section className="sm:section flex flex-col" >
+      <section className="section" >
          <MediaQuery minWidth={787}>
-            <Desktop link4={true} />
+            <Desktop link1={true} />
          </MediaQuery>
          <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
             <div>
