@@ -69,10 +69,10 @@ function Plan() {
          </MediaQuery>
          <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
             <div>
-               <h1 className="mb-1  font-extrabold text-3xl">
+               <h1 className="mb-1  font-extrabold text-2xl">
                   Select your plan
                </h1>
-               <p className="text-sm">
+               <p className="text-[12.5px]">
                   You have the option of monthly or yearly billing
                </p>
             </div>
