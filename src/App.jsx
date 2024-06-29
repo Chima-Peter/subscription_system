@@ -9,7 +9,9 @@ import Thanks from "./components/pages/thanks"
 function App() {
 
   return (
-   <HashRouter>
+   <BrowserRouter 
+      basename={import.meta.env.DEV ? '/' : '/subscription_system/'}
+   >
       <Routes>
          <Route path="*" element={<ErrorPage />} />
          <Route path="/" element={<Info />} />
@@ -18,7 +20,7 @@ function App() {
          <Route path="summary" element={<Summary />} />
          <Route path="thanks" element={<Thanks/>} />
       </Routes>
-   </HashRouter>
+   </BrowserRouter>
   )
 }
 
