@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-         'nav': "url('/images/components/util/bg-sidebar-desktop.svg')"
+         'nav-desktop': "url('/images/components/util/bg-sidebar-desktop.svg')",
+         'nav-mobile': "url('/images/components/util/bg-sidebar-mobile.svg')"
       },
       fontFamily: {
          'body' : "Ubuntu"

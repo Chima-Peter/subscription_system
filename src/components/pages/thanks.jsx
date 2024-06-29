@@ -9,7 +9,7 @@ function Thanks() {
             <Desktop link4={true} />
          </MediaQuery>
          <div className="m-auto flex flex-col justify-center items-center gap-3 text-[rgb(2,41,90)]">
-            <img src="/subscription_system/images/components/thanks/icon-thank-you.svg" width={'100px'} alt="THAKS FOR SUBSCRIBING" />
+            <img src="/subscription_system/images/components/thanks/icon-thank-you.svg" width={'100px'} alt="THANKS FOR SUBSCRIBING" />
             <h3 className="mt-4 font-bold text-3xl">
                Thank you!
             </h3>
