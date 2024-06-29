@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 function Desktop({link1=false, link2=false, link3=false, link4=false}) {
   return (
-    <nav className="sticky flex  flex-col gap-6 w-[274px] h-[568px] bg-nav" >
+    <nav className="sticky flex  flex-col gap-6 w-[274px] h-[568px] bg-navDesktop" >
       <div className="flex ml-10 gap-4 items-center text-white mt-10">
          <div 
             className={`w-8 h-8 text-md flex items-center justify-center border border-solid border-white rounded-full ${link1 ? 'bg-[hsl(206,94%,87%)] border-[hsl(206,94%,87%)] text-[hsl(213,96%,18%)] font-bold' : ' text-white'}`}>

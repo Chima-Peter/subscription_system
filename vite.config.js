@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-   base: "/subscription_system",
   plugins: [react()],
+  base: "/subscription_system/",
   optimizeDeps: {
    exclude: ['js-big-decimal']
  }

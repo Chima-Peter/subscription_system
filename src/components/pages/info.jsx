@@ -42,7 +42,7 @@ function Info() {
    })
   return (
     <main className="main font-body">
-      <section className="section" >
+      <section className="sm:section flex flex-col" >
          <MediaQuery minWidth={787}>
             <Desktop link4={true} />
          </MediaQuery>
