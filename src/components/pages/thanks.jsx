@@ -1,8 +1,19 @@
 import MediaQuery from "react-responsive"
 import Desktop from "../utils/desktop_bar"
 import Mobile from "../utils/mobileBar"
+import { useEffect } from "react"
 
 function Thanks() {
+
+   useEffect(() => {
+      sessionStorage.removeItem('name')
+      sessionStorage.removeItem('email')
+      sessionStorage.removeItem('phone')
+      sessionStorage.removeItem('addOn')
+      sessionStorage.removeItem('plan')
+      sessionStorage.removeItem('planText')
+   }, [])
+
   return (
     <main className='main font-body gap-2'>
       <MediaQuery maxWidth={786}>
