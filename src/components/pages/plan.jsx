@@ -63,11 +63,11 @@ function Plan() {
    }
    
   return (
-    <main className='main font-body gap-20'>
-    <MediaQuery maxWidth={786}>
+    <main className='main font-body gap-2'>
+      <MediaQuery maxWidth={786}>
          <Mobile link2={true} />
       </MediaQuery>
-      <section className='section max-md:px-6 max-md:mt-0 max-md:py-10 max-md:absolute max-md:top-0 translate-y-[100px] max-md:mb-10'>
+      <section className='section max-md:px-6 max-md:mt-0 max-md:py-10 max-md:absolute max-md:top-0 max-md:translate-y-[100px] max-md:mb-10'>
          <MediaQuery minWidth={787}>
             <Desktop link2={true} />
          </MediaQuery>
@@ -81,7 +81,7 @@ function Plan() {
                </p>
             </div>
             <div className='mt-4 md:mt-10 flex flex-col'>
-               <form noValidate onSubmit={handlePlan}>
+               <form noValidate onSubmit={handlePlan} id='planForm'>
                   <div className='flex flex-col w-100 md:flex-row gap-3'>
                      {
                         Object.keys(checkBox).map((key, index) => (
@@ -164,7 +164,7 @@ function Plan() {
       <MediaQuery maxWidth={786}>
          <div className='flex justify-between  w-[100%] sticky bottom-0 p-4 h-[80px] items-center bg-white'>
             <Prev back={'/'}/>
-            <Next />
+            <Next id={'planForm'} />
          </div>
       </MediaQuery>
     </main>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Next() {
+function Next({id}) {
   return (
    <button type='submit'
+   form={id}
    className='text-[12.5px] w-fit text-white px-4 rounded-md py-2 md:self-end md:mt-20 mt-0 bg-[rgb(2,41,90)]' >
    Next Step
 </button>

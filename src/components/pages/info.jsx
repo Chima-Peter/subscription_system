@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import validator from 'validator'
 import { useNavigate } from "react-router-dom"
 import MediaQuery from 'react-responsive';
+import Mobile from "../utils/mobileBar"
 import { Next } from "../utils/buttons"
 
 
@@ -41,12 +42,15 @@ function Info() {
       }
    })
   return (
-    <main className="main font-body">
-      <section className="md:section bg-white rounded-md p-4 w-80" >
+    <main className="main font-body gap-2">
+      <MediaQuery maxWidth={786}>
+         <Mobile link1={true} />
+      </MediaQuery>
+      <section className="section max-md:px-6 max-md:mt-0 max-md:py-10 max-md:absolute max-md:top-0 max-md:translate-y-[100px] max-md:mb-10" >
          <MediaQuery minWidth={787}>
             <Desktop link1={true} />
          </MediaQuery>
-         <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
+         <div className="mx-auto md:mt-7 text-[rgb(2,41,90)]">
             <div>
                <h1 className="mb-1  font-extrabold text-2xl">
                   Personal info
@@ -55,7 +59,7 @@ function Info() {
                   Please provide your name, email address and phone number.
                </p>
             </div>
-            <form onSubmit={formik.handleSubmit} noValidate className="mt-10 flex flex-col gap-5">
+            <form id="infoForm" onSubmit={formik.handleSubmit} noValidate className="mt-10 flex flex-col gap-5">
             <label htmlFor="name" className="font-medium text-[12.5px]">
                <div className="flex justify-between">
                   Name
@@ -114,10 +118,17 @@ function Info() {
                      placeholder="e.g. +1 234 567 890" 
                      {...formik.getFieldProps('phone')}/>
                </label>
-               <Next />
+               <MediaQuery minWidth={787} >
+                  <Next />
+               </MediaQuery>
             </form>
          </div>
       </section>
+       <MediaQuery maxWidth={786}>
+         <div className='flex justify-end  w-[100%] sticky bottom-0 p-4 h-[80px] items-center bg-white'>
+            <Next id={'infoForm'} />
+         </div>
+      </MediaQuery>
     </main>
   )
 }

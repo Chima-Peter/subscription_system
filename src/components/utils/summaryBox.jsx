@@ -50,8 +50,8 @@ function SummaryBox() {
          }
    }, [])
   return (
-    <div className='flex flex-col gap-6 mt-10 text-[hsl(213,96%,18%)'>
-      <div className='bg-[hsl(217,100%,97%)] border border-[hsl(217,100%,97%)] rounded-lg py-3 px-5 w-[400px]'>
+    <div className='flex flex-col gap-6 mt-4 md:mt-10 text-[hsl(213,96%,18%)'>
+      <div className='bg-[hsl(217,100%,97%)] border border-[hsl(217,100%,97%)] rounded-lg py-3 px-5 w-[80vw] md:w-[400px]'>
          <div className='flex items-center justify-between pb-10 border-b-2 border-b-[hsl(229,24%,87%)]'>
             <div className='flex flex-col items-start '>
                <h4 className='text-[13px] font-extrabold pb-0.5'>

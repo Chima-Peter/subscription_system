@@ -3,6 +3,7 @@ import { Next, Prev } from '../utils/buttons';
 import Desktop from '../utils/desktop_bar';
 import AddOnBlock from '../utils/addonblock';
 import { useNavigate } from 'react-router-dom';
+import Mobile from '../utils/mobileBar';
 import MediaQuery from 'react-responsive';
 
 function AddOn() {
@@ -54,22 +55,25 @@ function AddOn() {
   };
 
   return (
-    <main className='main font-body'>
-      <section className='section'>
+    <main className='main font-body gap-2'>
+      <MediaQuery maxWidth={786}>
+         <Mobile link3={true} />
+      </MediaQuery>
+      <section className='section max-md:px-6 max-md:mt-0 max-md:py-10 max-md:absolute max-md:top-0 max-md:translate-y-[100px] max-md:mb-10'>
         <MediaQuery minWidth={787}>
             <Desktop link3={true} />
          </MediaQuery>
-        <div className="mx-auto mt-7 text-[rgb(2,41,90)]">
+        <div className="mx-auto md:mt-7 text-[rgb(2,41,90)]">
           <div>
             <h1 className="mb-1  font-extrabold text-2xl">
                Pick add-ons
             </h1>
-            <p className="text-[12.5px]">
+            <p className="text-md md:text-[12.5px]">
                Add-ons help enhance your gaming experience
             </p>
           </div>
-          <div className='mt-10 flex flex-col'>
-            <form onSubmit={handleAddOn} noValidate autoComplete='on' className='flex flex-col gap-3'>
+          <div className='md:mt-10 mt-4 flex flex-col'>
+            <form id='addForm' onSubmit={handleAddOn} noValidate autoComplete='on' className='flex flex-col gap-3'>
               {Object.keys(checkBox).map((key) => (
                 <div
                   key={key}
@@ -128,14 +132,22 @@ function AddOn() {
                   </label>
                 </div>
               ))}
-              <div className='mt-[1.8rem] flex justify-between'>
-                <Prev back={'/plan'}/>
-                <Next />
-              </div>
+              <MediaQuery minWidth={787}>
+                  <div className='mt-[1.8rem] flex justify-between'>
+                     <Prev back={'/plan'}/>
+                     <Next />
+                  </div>
+              </MediaQuery>
             </form>
           </div>
         </div>
       </section>
+       <MediaQuery maxWidth={786}>
+         <div className='flex justify-between  w-[100%] sticky bottom-0 p-4 h-[80px] items-center bg-white'>
+            <Prev back={'/plan'}/>
+            <Next id={'addForm'} />
+         </div>
+      </MediaQuery>
     </main>
   );
 }
